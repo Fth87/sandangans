@@ -1,97 +1,93 @@
 import Link from 'next/link';
 import React from 'react';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-
-export function SheetDemo() {
-  return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
-      </SheetTrigger>
-      <SheetContent side={'left'}>
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>Make changes to your profile here. Click save when youre done.</SheetDescription>
-        </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            {/* <Label htmlFor="name" className="text-right">
-              Name
-            </Label> */}
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            {/* <Label htmlFor="username" className="text-right">
-              Username
-            </Label> */}
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
-  );
-}
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { AlignRight } from 'lucide-react';
 
 export default function Navbar() {
-  const navMenu1 = {
-    home: {
+  const navMenu1 = [
+    {
       title: 'Home',
       href: '/',
     },
-    about: {
-      title: 'About',
+    {
+      title: 'About Us',
       href: '/about',
     },
-    contact: {
-      title: 'Contact',
-      href: '/contact',
+    {
+      title: 'Article',
+      href: '/article',
     },
-  };
+  ];
 
-  const navMenu2 = {
-    home: {
-      title: 'Home',
-      href: '/',
+  const navMenu2 = [
+    {
+      title: 'Trending',
+      href: '/trending',
     },
-    about: {
-      title: 'About',
-      href: '/about',
+    {
+      title: 'Shop',
+      href: '/shop',
     },
-    contact: {
-      title: 'Contact',
-      href: '/contact',
+    {
+      title: 'Collections',
+      href: '/collections',
     },
-  };
+  ];
+
+  function SheetDemo() {
+    return (
+      <Sheet>
+        <SheetTrigger asChild className="md:hidden block pt-6 pr-6">
+          <div>
+            <AlignRight size={32} />
+          </div>
+        </SheetTrigger>
+        <SheetContent side={'right'}>
+          <SheetHeader>
+            <SheetTitle>
+              <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
+                Sandangans
+              </Link>
+            </SheetTitle>
+            <SheetDescription></SheetDescription>
+          </SheetHeader>
+          <div className="flex flex-col gap-8 ">
+            {navMenu1.concat(navMenu2).map((menu) => (
+              <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
+                {menu.title}
+              </Link>
+            ))}
+          </div>
+        </SheetContent>
+      </Sheet>
+    );
+  }
 
   return (
-    <SheetDemo />
-    // <div className="container mx-auto">
-    //   <nav className="flex justify-between items-center py-8">
-    //     <div className="flex gap-8">
-    //       {Object.values(navMenu1).map((menu) => (
-    //         <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
-    //           {menu.title}
-    //         </Link>
-    //       ))}
-    //     </div>
-    //     <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
-    //       Sandangans
-    //     </Link>
-    //     <div className="flex gap-8">
-    //       {Object.values(navMenu2).map((menu) => (
-    //         <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
-    //           {menu.title}
-    //         </Link>
-    //       ))}
-    //     </div>
-    //   </nav>
-    // </div>
+    <>
+      <div className="container mx-auto md:block flex justify-end">
+        <SheetDemo />
+        <nav className=" justify-between items-center py-8 hidden md:flex">
+          <div className="flex gap-8">
+            {navMenu1.map((menu) => (
+              <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
+                {menu.title}
+              </Link>
+            ))}
+          </div>
+          <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
+            Sandangans
+          </Link>
+          <div className="flex gap-8">
+            {navMenu2.map((menu) => (
+              <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
+                {menu.title}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </>
   );
 }
