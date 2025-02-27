@@ -19,14 +19,14 @@ export function SheetDemo() {
         </SheetHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
+            {/* <Label htmlFor="name" className="text-right">
               Name
-            </Label>
+            </Label> */}
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
+            {/* <Label htmlFor="username" className="text-right">
               Username
-            </Label>
+            </Label> */}
           </div>
         </div>
         <SheetFooter>
