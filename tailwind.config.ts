@@ -8,10 +8,10 @@ module.exports = {
       fontFamily: {
         sans: ['Lato', ...defaultTheme.fontFamily.sans],
         title: ['Playfair Display', ...defaultTheme.fontFamily.serif],
-        
       },
       colors: {
         brown: {
+          DEFAULT: '#402B20',
           100: '#ECEAE9',
           200: '#C4BDBA',
           300: '#7F716A',
@@ -30,4 +30,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
