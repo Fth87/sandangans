@@ -1,7 +1,12 @@
-export default function Home() {
+import React from 'react'
+import Hero from './landing/hero'
+
+function page() {
   return (
-    <div className="">
-      
-    </div>
-  );
+    <>
+    <Hero/>
+    </>
+  )
 }
+
+export default page

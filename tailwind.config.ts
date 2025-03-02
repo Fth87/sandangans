@@ -12,8 +12,9 @@ module.exports = {
       colors: {
         brown: {
           DEFAULT: '#402B20',
-          100: '#ECEAE9',
-          200: '#C4BDBA',
+          50: '#ECEAE9',
+          100: '#C4BDBA',
+          200: '#A79D98',
           300: '#7F716A',
           400: '#66554D',
           500: '#402B20',
@@ -29,6 +30,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require('tailwindcss-animate')],
   darkMode: 'selector',
 };

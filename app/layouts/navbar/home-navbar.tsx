@@ -66,27 +66,29 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="container mx-auto md:block flex justify-end">
-        <SheetDemo />
-        <nav className=" justify-between items-center py-8 hidden md:flex">
-          <div className="flex gap-8">
-            {navMenu1.map((menu) => (
-              <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
-                {menu.title}
-              </Link>
-            ))}
-          </div>
-          <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
-            Sandangans
-          </Link>
-          <div className="flex gap-8">
-            {navMenu2.map((menu) => (
-              <Link key={menu.title} href={menu.href} className="font-light text-brown hover:font-normal hover:text-brown-600">
-                {menu.title}
-              </Link>
-            ))}
-          </div>
-        </nav>
+      <div className="w-screen   fixed">
+        <div className="container mx-auto flex justify-end  md:block">
+          <SheetDemo />
+          <nav className=" justify-between items-center py-8 hidden md:flex">
+            <div className="flex gap-8">
+              {navMenu1.map((menu) => (
+                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown border-2 text-brown hover:font-normal hover:text-brown-600">
+                  {menu.title}
+                </Link>
+              ))}
+            </div>
+            <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
+              Sandangans
+            </Link>
+            <div className="flex gap-8">
+              {navMenu2.map((menu) => (
+                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown border-2 text-brown hover:font-normal hover:text-brown-600">
+                  {menu.title}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </div>
       </div>
     </>
   );
