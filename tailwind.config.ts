@@ -9,6 +9,12 @@ module.exports = {
         sans: ['Lato', ...defaultTheme.fontFamily.sans],
         title: ['Playfair Display', ...defaultTheme.fontFamily.serif],
       },
+
+      transitionDuration: {
+        '5000' : '5000ms',
+        '6000': '6000ms',
+
+      },
       colors: {
         brown: {
           DEFAULT: '#402B20',
