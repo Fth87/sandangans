@@ -8,12 +8,13 @@ module.exports = {
       fontFamily: {
         sans: ['Lato', ...defaultTheme.fontFamily.sans],
         title: ['Playfair Display', ...defaultTheme.fontFamily.serif],
-        
       },
       colors: {
         brown: {
-          100: '#ECEAE9',
-          200: '#C4BDBA',
+          DEFAULT: '#402B20',
+          50: '#ECEAE9',
+          100: '#C4BDBA',
+          200: '#A79D98',
           300: '#7F716A',
           400: '#66554D',
           500: '#402B20',
@@ -29,5 +30,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
+  darkMode: 'selector',
 };
