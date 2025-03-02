@@ -72,7 +72,7 @@ export default function Navbar() {
           <nav className=" justify-between items-center py-8 hidden md:flex">
             <div className="flex gap-8">
               {navMenu1.map((menu) => (
-                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown border-2 text-brown hover:font-normal hover:text-brown-600">
+                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600">
                   {menu.title}
                 </Link>
               ))}
@@ -82,7 +82,7 @@ export default function Navbar() {
             </Link>
             <div className="flex gap-8">
               {navMenu2.map((menu) => (
-                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown border-2 text-brown hover:font-normal hover:text-brown-600">
+                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600">
                   {menu.title}
                 </Link>
               ))}
