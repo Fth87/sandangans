@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`bg-brown-50 antialiased`}>
+    <html lang="en ">
+      <body className={`flex flex-col justify-between bg-brown-50 antialiased min-h-screen `}>
         <Navbar />
         {children}
         <Footer />
