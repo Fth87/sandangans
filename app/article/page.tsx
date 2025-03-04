@@ -30,7 +30,13 @@ export default function BlogListing() {
       author: 'Sandangans Teampeack',
       date: '1 March 2025',
       image: '/images/article/owi.jpg',
-      content: ['Lorem ipsum dolor sit amet consectetur.', 'In dictumst ullamcorper in urna.', 'Iaculis velit morbi mauris vel commodo malesuada urna.', 'Tellus vitae massa vitae arcu id at pharetra.'],
+      content: [
+        'Lorem ipsum dolor sit amet consectetur. A eget eleifend libero ipsum. A turpis ut dignissim lorem metus tincidunt etiam. Nunc ullamcorper nunc aliquam eu molestie nunc sit et morbi. Commodo magna mattis lectus cras faucibus odio nisl ullamcorper gravida.',
+        'In dictumst ullamcorper in urna. Eget egestas ullamcorper non duis. Odio turpis urna faucibus dolor sit morbi. Senectus risus vestibulum hendrerit dignissim orci leo iaculis egestas. Sit ullamcorper amet lectus viverra cursus. Elit bibendum diam lorem aliquam massa cursus sit vitae mollis. Consequat leo hac interdum mollis amet massa. Magna vel dignissim nunc justo elit sed enim consequat. Fermentum feugiat elit elementum est fringilla. A pretium luctus non tempus elit. Nunc turpis diam turpis cursus enim porttitor est sit eu. Nunc pretium montes dolor vitae mauris pharetra sapien. Non vel integer pulvinar a mi.',
+        'Iaculis velit morbi mauris vel commodo malesuada urna. Malesuada dolor vel enim sodales ornare velit at. Nullam id non blandit aliquet tellus id sit. Enim proin viverra at varius ac convallis. Vitae proin quisque iaculis lectus fames tristique aliquam. Viverra turpis vitae diam morbi ut integer sed eget. Eget aliquet mauris sit pellentesque. Netus viverra amet magna venenatis dictum molestie et mauris. Tellus nibh diam molestie egestas dui vitae et. Quam sit et nisi ultrices posuere nisi aliquam. Pellentesque donec magna ipsum ac urna.',
+        'Tellus vitae massa vitae arcu id at pharetra. Diam nibh lacus eros urna lobortis dolor. Scelerisque orci lorem mi nunc eget sem. Nulla enim erat molestie quam quam malesuada ut. Risus in magna viverra molestie semper morbi venenatis. Nunc orci neque tempor habitant consequat eu.',
+        'Praesent tortor nibh volutpat pellentesque mauris eu urna sem sagittis. Nam ultrices sed fringilla diam neque habitant vitae. Enim diam turpis sed facilisis suspendisse egestas elementum. At ut id leo neque. Dignissim tristique aliquet semper natoque ultricies. Enim senectus adipiscing mi id sed aenean. Turpis etiam arcu vel vel. Tortor sagittis varius massa iaculis amet ullamcorper amet velit morbi. Tortor tristique at proin feugiat nunc eu tortor natoque. Scelerisque sit facilisis quam ligula aliquam fermentum id. In nunc ut sed lectus proin magnis amet gravida. Tempus vitae faucibus quis in.',
+      ],
     });
     return newArticles;
   };

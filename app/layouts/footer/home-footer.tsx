@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="w-full h-px bg-brown-200 my-6"></div>
 
         {/* Navigation links */}
-        <nav className="flex  justify-between  gap-x-4 gap-y-4 md:gap-x-12 lg:gap-x-20">
+        <nav className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6  justify-between  gap-x-4 gap-y-4 md:gap-x-12 lg:gap-x-20">
           {footerText.map((menu) => (
             <Link key={menu.title} href={menu.href} className="text-brown hover:text-brown-400 transition-colors">
               {menu.title}
