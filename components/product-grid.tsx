@@ -4,52 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-
-type Product = {
-  id: number;
-  name: string;
-  price: number;
-  originalPrice: number;
-  image: string;
-  slug: string;
-};
-
-// Generate mock products
-const generateProducts = (start: number, count: number): Product[] => {
-  return Array(count)
-    .fill(null)
-    .map((_, index) => ({
-      id: start + index,
-      name: 'Basic Heavy Weight T-Shirt',
-      price: 89000,
-      originalPrice: 175000,
-      image: '/images/marketplace/contoh.png',
-      slug: `basic-heavy-weight-t-shirt-${start + index}`,
-    }));
-};
+import { generateProducts, Product } from '@/app/marketplace/data';
+import { useProducts } from '@/app/marketplace/hooks/product';
 
 export default function ProductGrid() {
-  const [products, setProducts] = useState<Product[]>(generateProducts(1, 8));
-  const [isLoading, setIsLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
-
-  const loadMore = async () => {
-    setIsLoading(true);
-
-    // Simulate API call delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    const newProducts = generateProducts(products.length + 1, 8);
-    setProducts((prev) => [...prev, ...newProducts]);
-
-    // For demo purposes, stop loading more after 24 items
-    if (products.length + 8 >= 24) {
-      setHasMore(false);
-    }
-
-    setIsLoading(false);
-  };
-
+  const { products, isLoading, hasMore, loadMore } = useProducts();
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

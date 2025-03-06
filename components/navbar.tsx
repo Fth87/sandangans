@@ -88,7 +88,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/marketplace', label: 'Shop' },
-    { href: '/trending', label: 'Trending' },
+    { href: '/marketplace/trending', label: 'Trending' },
     { href: '/marketplace/collections', label: 'Collections' },
   ];
 
