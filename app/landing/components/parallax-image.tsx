@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 // import React, { useRef, useEffect } from 'react';
 
 // interface ParallaxImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -56,50 +57,45 @@ interface ParallaxSectionProps {
   imageStyle?: React.CSSProperties;
 }
 
-const ParallaxSection: React.FC<ParallaxSectionProps> = ({
-  image,
-  alt,
-  speed = 0.5,
-  children,
-  style,
-  imageStyle,
-}) => {
+const ParallaxSection: React.FC<ParallaxSectionProps> = ({ image, alt, speed = 0.5, children, style, imageStyle }) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const ticking = useRef(false);
 
-  const handleScroll = () => {
+  const handleScroll = React.useCallback(() => {
     if (imageRef.current && imageRef.current.parentElement) {
       // Dapatkan posisi kontainer relatif terhadap dokumen
       const containerRect = imageRef.current.parentElement.getBoundingClientRect();
-      const containerOffset = containerRect.top + window.pageYOffset;
-      const scrollTop = window.pageYOffset;
+      const containerOffset = containerRect.top + window.scrollY;
+      const scrollTop = window.scrollY;
       const distance = scrollTop - containerOffset;
       // Update posisi gambar menggunakan transform untuk performa yang lebih baik
       imageRef.current.style.transform = `translateY(${distance * speed}px)`;
     }
     ticking.current = false;
-  };
+  }, [speed]);
 
-  const onScroll = () => {
+  const onScroll = React.useCallback(() => {
     if (!ticking.current) {
       window.requestAnimationFrame(handleScroll);
       ticking.current = true;
     }
-  };
+  }, [handleScroll]);
 
   useEffect(() => {
     // Hitung posisi awal
     handleScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
-  }, [speed]);
+  }, [handleScroll, onScroll]);
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', ...style }}>
-      <img
+      <Image
         ref={imageRef}
         src={image}
         alt={alt}
+        width={1920}
+        height={1080}
         style={{
           position: 'absolute',
           top: 0,
@@ -110,9 +106,7 @@ const ParallaxSection: React.FC<ParallaxSectionProps> = ({
           ...imageStyle,
         }}
       />
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        {children}
-      </div>
+      <div style={{ position: 'relative', zIndex: 1 }}>{children}</div>
     </div>
   );
 };

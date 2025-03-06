@@ -27,7 +27,7 @@ export default function Navbar() {
     },
     {
       title: 'Shop',
-      href: '/shop',
+      href: '/marketplace',
     },
     {
       title: 'Collections',

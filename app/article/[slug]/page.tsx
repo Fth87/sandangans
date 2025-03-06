@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState} from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -22,7 +22,6 @@ export default function ArticleDetail({ params }: { params: Promise<{ slug: stri
   const router = useRouter();
   const [article, setArticle] = useState<Article | null>(null);
   const [resolvedParams, setResolvedParams] = useState<{ slug: string } | null>(null);
-  const scrollRef = useRef<number | null>(null);
 
   useEffect(() => {
     params.then(setResolvedParams);

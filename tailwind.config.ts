@@ -11,9 +11,8 @@ module.exports = {
       },
 
       transitionDuration: {
-        '5000' : '5000ms',
+        '5000': '5000ms',
         '6000': '6000ms',
-
       },
       colors: {
         brown: {
