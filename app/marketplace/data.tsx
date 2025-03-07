@@ -1,4 +1,3 @@
-
 export type Product = {
   id: number;
   name: string;
@@ -21,3 +20,20 @@ export const generateProducts = (start: number, count: number): Product[] => {
       slug: `basic-heavy-weight-t-shirt-${start + index}`,
     }));
 };
+
+export const collections = [
+  {
+    id: 'sustainable-basics',
+    title: 'BREATHABLE, COMFORTABLE, AND SUSTAINABLE',
+    description: 'Made from post-consumer cotton waste, we recycled cotton into collection includes tees, dresses, and loungewear.',
+    image: '/images/marketplace/sewing-denim-jacket-buttons.png',
+    products: generateProducts(1, 3),
+  },
+  {
+    id: 'upcycled-denim',
+    title: 'FROM OLD JEANS TO TIMELESS FASHION',
+    description: 'Our upcycled denim collection breathes new life into stylish jackets, skirts, hats, and more.',
+    image: '/images/marketplace/young-teenage-boy-wearing-denim-outfit-1.png',
+    products: generateProducts(1, 3),
+  },
+];

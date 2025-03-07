@@ -25,3 +25,4 @@ export function useProducts() {
 
   return { products, isLoading, hasMore, loadMore };
 }
+

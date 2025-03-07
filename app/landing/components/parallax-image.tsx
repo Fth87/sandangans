@@ -55,9 +55,10 @@ interface ParallaxSectionProps {
   children: React.ReactNode;
   style?: React.CSSProperties;
   imageStyle?: React.CSSProperties;
+  imgClassName?:string
 }
 
-const ParallaxSection: React.FC<ParallaxSectionProps> = ({ image, alt, speed = 0.5, children, style, imageStyle }) => {
+const ParallaxSection: React.FC<ParallaxSectionProps> = ({ image, alt, speed = 0.5, children, style, imageStyle, imgClassName }) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const ticking = useRef(false);
 
@@ -96,6 +97,7 @@ const ParallaxSection: React.FC<ParallaxSectionProps> = ({ image, alt, speed = 0
         alt={alt}
         width={1920}
         height={1080}
+        className={imgClassName}
         style={{
           position: 'absolute',
           top: 0,
