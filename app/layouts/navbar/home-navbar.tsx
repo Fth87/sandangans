@@ -1,5 +1,6 @@
+'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { AlignRight } from 'lucide-react';
@@ -38,12 +39,12 @@ export default function Navbar() {
   function SheetDemo() {
     return (
       <Sheet>
-        <SheetTrigger asChild className="md:hidden block pt-6 pr-6">
+        <SheetTrigger asChild className="md:hidden block hover:cursor-pointer pt-6 pr-6">
           <div>
             <AlignRight size={32} />
           </div>
         </SheetTrigger>
-        <SheetContent side={'right'}>
+        <SheetContent side={'right'} className="bg-brown-50">
           <SheetHeader>
             <SheetTitle>
               <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
@@ -64,9 +65,23 @@ export default function Navbar() {
     );
   }
 
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="w-screen   fixed">
+      <div className={`w-screen  fixed z-50 ${scrollY > 120 && `bg-brown-50 shadow-md`}`}>
         <div className="container mx-auto flex justify-end  md:block">
           <SheetDemo />
           <nav className=" justify-between items-center py-8 hidden md:flex">
