@@ -8,100 +8,9 @@ import CountUp from 'react-countup';
 import SustainabilityMetrics from '@/components/sustainability-metrics';
 import { AnimatedTestimonials } from '@/components/animated-testimonial';
 import { Awward } from '@/components/awward';
-
-// Environmental Impact Data
-const impactStats = [
-  {
-    value: 18000,
-    suffix: '+',
-    label: 'Kg of CO2 emissions avoided',
-    description: 'through energy-efficient production',
-    icon: Factory,
-  },
-  {
-    value: 1200,
-    suffix: '+',
-    label: 'Kg of fabric waste saved',
-    description: 'from landfills',
-    icon: Recycle,
-  },
-  {
-    value: 45,
-    suffix: '%',
-    label: 'Less water usage',
-    description: 'compared to traditional manufacturing',
-    icon: Globe,
-  },
-  {
-    value: 25000,
-    suffix: '+',
-    label: 'Trees planted',
-    description: 'through our reforestation program',
-    icon: Leaf,
-  },
-];
-
-// Company Timeline
-const timeline = [
-  {
-    year: 2019,
-    title: 'The Beginning',
-    description: 'Founded with a vision to revolutionize sustainable fashion in Indonesia.',
-    image: '/images/about/journey/beginning.jpg',
-  },
-  {
-    year: 2020,
-    title: 'First Collection Launch',
-    description: 'Introduced our signature recycled cotton collection.',
-    image: '/images/about/journey/first-collection.jpg',
-  },
-  {
-    year: 2021,
-    title: 'Sustainability Certification',
-    description: 'Achieved Global Recycled Standard (GRS) certification.',
-    image: '/images/about/journey/Sustainability Certification.png',
-  },
-  {
-    year: 2022,
-    title: 'Zero Waste Initiative',
-    description: 'Launched our revolutionary fabric recycling program.',
-    image: '/images/about/journey/zero waste.jpg',
-  },
-];
-
-const testimonials = [
-  {
-    quote: "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: 'Sarah Chen',
-    designation: 'Product Manager at TechFlow',
-    src: '/images/about/diriku almet edit.jpg',
-  },
-  {
-    quote: "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: 'Michael Rodriguez',
-    designation: 'CTO at InnovateSphere',
-    src: '/images/about/diriku almet edit.jpg',
-  },
-  {
-    quote: "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: 'Emily Watson',
-    designation: 'Operations Director at CloudScale',
-    src: '/images/about/diriku almet edit.jpg',
-  },
-  {
-    quote: "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: 'James Kim',
-    designation: 'Engineering Lead at DataPro',
-    src: '/images/about/diriku almet edit.jpg',
-  },
-  {
-    quote: 'The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.',
-    name: 'Lisa Thompson',
-    designation: 'VP of Technology at FutureNet',
-    src: '/images/about/diriku almet edit.jpg',
-  },
-];
-// Testimonials
+import { WorldMapDemo } from './map';
+import { impactStats, testimonials, timeline } from './const';
+import { AccordionFaq } from './accordion';
 
 function StatCard({ stat, inView }: { stat: any; inView: boolean }) {
   const Icon = stat.icon;
@@ -181,7 +90,7 @@ export default function AboutPageClient() {
       </section>
 
       {/* Timeline Section */}
-      <section ref={timelineRef} className="py-16 md:py-24 bg-white relative overflow-hidden">
+      <section ref={timelineRef} className="py-16 md:py-24  relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/5 to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={timelineInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
@@ -233,18 +142,28 @@ export default function AboutPageClient() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-[#2b2b2b] text-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-brown-100 text-white overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={awardsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-3">
-            <h2 className="font-title text-brown-50 text-5xl md:text-6xl mb-4">Voices from Our Community</h2>
+            <h2 className="font-title text-brown-700 text-5xl md:text-6xl mb-4">Voices from Our Community</h2>
           </motion.div>
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
       </section>
-
+      <section className="container mx-auto my-20">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={awardsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4 }} className="text-start mb-3">
+          <h1 className="font-title text-brown-700 text-5xl md:text-6xl mb-4">FAQ</h1>
+          <p className="text-brown-300 text-lg">Answers to Your Questions About Sustainable Fashion</p>
+        </motion.div>
+        <div className=" px-4 bg-brown-100">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={awardsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-3">
+            <AccordionFaq />
+          </motion.div>
+        </div>
+      </section>
       {/* Call to Action Section */}
-      <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent" />
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 " />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -254,6 +173,7 @@ export default function AboutPageClient() {
                 Join our movement
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
+              {/* <WorldMapDemo/> */}
             </motion.div>
           </div>
         </div>
