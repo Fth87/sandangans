@@ -1,27 +1,102 @@
-import Image from 'next/image';
-import CardHero from './components/hero-card';
+"use client"
+
+import Image from "next/image"
+import CardHero from "./components/hero-card"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 export default function Hero() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.2,
+      },
+    },
+  }
+
   return (
-    <div className="container mx-auto xl:max-w-7xl">
-      <div className="flex flex-row items-center justify-center h-screen w-full">
-        <div className=" text-start max-w-xl">
-          <p className=" text-xl font-semibold font-sans  text-brown">East 2025</p>
-          <div className="text-brown text-5xl font-bold font-title leading-tight mb-3">
+    <div className="container mx-auto px-4 xl:max-w-7xl">
+      <div
+        ref={ref}
+        className="flex flex-col lg:flex-row items-center justify-center min-h-screen w-full py-16 lg:py-0"
+      >
+        <motion.div
+          className="text-start max-w-xl mb-12 lg:mb-0"
+          variants={textVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <p className="text-xl font-semibold font-sans text-brown">East 2025</p>
+          <div className="text-brown text-3xl md:text-4xl lg:text-5xl font-bold font-title leading-tight mb-3">
             Sandangans: <br />
             Where Style Meets Sustainability
           </div>
-          <div className=" text-brown text-lg font-light font-sans">Every stitch tells a story of recycled materials given new life. Discover fashion collections that are not only stylish but also kind to the planet.</div>
-        </div>
-        <div className="flex  justify-end items-end h-full relative ">
-          <div className="relative pr-20">
-            <CardHero title="Black Shoes" description="We recycling polyester to make the outsole of this shoes" image="/images/hero/sepatu.png" className="-left-[15%] bottom-[15%]" />
-            <CardHero title="Beige Hat" description="Handwoven from leftover fabric, this hat is as eco-friendly as it is stylish." image="/images/hero/hat.png" className="right-[16%] top-[2%]" />
-            <CardHero title="Woman Outer" description="Handwoven from leftover fabric, this hat is as eco-friendly as it is stylish." image="/images/hero/outer.png" className="right-[0%] bottom-[40%]" />
-            <Image className="max-w-[1400px]" width={540} height={544} src="/images/hero/mascot.png" alt="hero mascott" />
+          <div className="text-brown text-base md:text-lg font-light font-sans">
+            Every stitch tells a story of recycled materials given new life. Discover fashion collections that are not
+            only stylish but also kind to the planet.
           </div>
-        </div>
+        </motion.div>
+
+        <motion.div
+          className="flex justify-center lg:justify-end items-center lg:items-end h-full relative"
+          variants={imageVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <div className="relative pr-0 lg:pr-20">
+            <CardHero
+              title="Black Shoes"
+              description="We recycling polyester to make the outsole of this shoes"
+              image="/images/hero/sepatu.png"
+              className="hidden md:flex -left-[15%] bottom-[0%]"
+            />
+            <CardHero
+              title="Beige Hat"
+              description="Handwoven from leftover fabric, this hat is as eco-friendly as it is stylish."
+              image="/images/hero/hat.png"
+              className="hidden md:flex right-[16%] top-[2%]"
+            />
+            <CardHero
+              title="Woman Outer"
+              description="Handwoven from leftover fabric, this hat is as eco-friendly as it is stylish."
+              image="/images/hero/outer.png"
+              className="hidden md:flex right-[0%] bottom-[30%]"
+            />
+            <Image
+              className="max-w-full md:max-w-[1400px] w-auto h-auto"
+              width={540}
+              height={544}
+              src="/images/hero/mascot.png"
+              alt="hero mascott"
+              priority
+            />
+          </div>
+        </motion.div>
       </div>
     </div>
-  );
+  )
 }
+
+
