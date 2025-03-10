@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-
+import { motion } from 'framer-motion';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { AlignRight } from 'lucide-react';
 
@@ -33,6 +33,10 @@ export default function Navbar() {
     {
       title: 'Collections',
       href: '/collections',
+    },
+    {
+      title: 'Contribute',
+      href: '/contribute',
     },
   ];
 
@@ -81,10 +85,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`w-screen  fixed z-50 ${scrollY > 120 && `bg-brown-50 shadow-md`}`}>
+      {/* <div className={`w-screen   ${scrollY > 120 && `bg-brown-50 shadow-md`}`}> */}
+      <motion.nav initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }} className={`fixed w-full top-0 z-[9999]   ${scrollY > 10 && `bg-brown-50/50 backdrop-blur-md shadow-sm`} `}>
         <div className="container mx-auto flex justify-end  md:block">
           <SheetDemo />
-          <nav className=" justify-between items-center py-8 hidden md:flex">
+          <nav className=" justify-between items-center py-4 hidden md:flex">
             <div className="flex gap-8">
               {navMenu1.map((menu) => (
                 <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600">
@@ -104,7 +109,8 @@ export default function Navbar() {
             </div>
           </nav>
         </div>
-      </div>
+      </motion.nav>
+      {/* </div> */}
     </>
   );
 }
