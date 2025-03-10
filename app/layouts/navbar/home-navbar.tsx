@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { AlignRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-export default function Navbar() {
+export default function Navbar({ isWhite }: { isWhite?: boolean }) {
   const navMenu1 = [
     {
       title: 'Home',
@@ -32,7 +33,11 @@ export default function Navbar() {
     },
     {
       title: 'Collections',
-      href: '/collections',
+      href: '/marketplace/collections',
+    },
+    {
+      title: 'Contribute',
+      href: '/contribute',
     },
   ];
 
@@ -81,30 +86,32 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={`w-screen  fixed z-50 ${scrollY > 120 && `bg-brown-50 shadow-md`}`}>
+      {/* <div className={`w-screen  fixed z-50 ${scrollY > 120 && `bg-brown-50 shadow-md`}`}> */}
+      <motion.nav initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }} className={`fixed w-full top-0 z-[9999] ${scrollY > 10 && `bg-brown-50/50 backdrop-blur-md shadow-sm`} `}>
         <div className="container mx-auto flex justify-end  md:block">
           <SheetDemo />
-          <nav className=" justify-between items-center py-8 hidden md:flex">
+          <nav className=" justify-between items-center py-4 hidden md:flex">
             <div className="flex gap-8">
               {navMenu1.map((menu) => (
-                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600">
+                <Link key={menu.title} href={menu.href} className={`${isWhite && !(scrollY > 10) ? ' text-brown-50' : 'hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600'} font-light `}>
                   {menu.title}
                 </Link>
               ))}
             </div>
-            <Link href={'/'} className="text-2xl font-semibold text-brown font-title italic">
+            <Link href={'/'} className={`${isWhite && !(scrollY > 10) ? 'text-brown-50' : 'text-brown'} text-2xl font-semibold  font-title italic`}>
               Sandangans
             </Link>
             <div className="flex gap-8">
               {navMenu2.map((menu) => (
-                <Link key={menu.title} href={menu.href} className="font-light hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600">
+                <Link key={menu.title} href={menu.href} className={`${isWhite && !(scrollY > 10) ? ' text-brown-50' : 'hover:border-b-brown hover:border-b-2 text-brown hover:font-normal hover:text-brown-600'} font-light `}>
                   {menu.title}
                 </Link>
               ))}
             </div>
           </nav>
         </div>
-      </div>
+      </motion.nav>
+      {/* </div> */}
     </>
   );
 }

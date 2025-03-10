@@ -5,6 +5,8 @@ import WasteRecycle from './landing/waste-recycle';
 import Collection from './landing/collection';
 
 import { motion } from 'framer-motion';
+import Navbar from './layouts/navbar/home-navbar';
+import Footer from './layouts/footer/home-footer';
 
 function Page() {
   // Fade in animation for the entire page
@@ -21,11 +23,15 @@ function Page() {
   };
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={pageVariants} className="overflow-x-hidden">
-      <Hero />
-      <WasteRecycle />
-      <Collection />
-    </motion.div>
+    <>
+      <Navbar />
+      <motion.div initial="hidden" animate="visible" variants={pageVariants} className="overflow-x-hidden">
+        <Hero />
+        <WasteRecycle />
+        <Collection />
+      </motion.div>
+      <Footer />
+    </>
   );
 }
 

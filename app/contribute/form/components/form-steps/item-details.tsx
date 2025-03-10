@@ -137,9 +137,8 @@ export default function ItemDetailsForm({ items, updateItems, onNext, onBack }: 
         {/* Item Tabs */}
         <div className="flex space-x-2 overflow-x-auto pb-2">
           {items.map((item, index) => (
-            <motion.button
+            <motion.div
               key={item.id}
-              type="button"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveItemIndex(index)}
@@ -158,7 +157,7 @@ export default function ItemDetailsForm({ items, updateItems, onNext, onBack }: 
                   <X size={14} />
                 </button>
               )}
-            </motion.button>
+            </motion.div>
           ))}
 
           <motion.button type="button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={addItem} className="px-3 py-2 rounded-md bg-gray-100 text-brown-800 hover:bg-gray-200 flex items-center">
@@ -176,7 +175,7 @@ export default function ItemDetailsForm({ items, updateItems, onNext, onBack }: 
                   <SelectTrigger id={`item-type-${activeItemIndex}`} className={`border-brown-300 w-full ${errors[`item${activeItemIndex}_type`] ? 'border-red-500' : ''}`}>
                     <SelectValue placeholder="Select item type" />
                   </SelectTrigger>
-                  <SelectContent className='bg-brown-50'>
+                  <SelectContent className="bg-brown-50">
                     {itemTypes.map((type) => (
                       <SelectItem key={type} value={type}>
                         {type}
@@ -193,7 +192,7 @@ export default function ItemDetailsForm({ items, updateItems, onNext, onBack }: 
                   <SelectTrigger id={`fabric-composition-${activeItemIndex}`} className={`border-brown-300 w-full ${errors[`item${activeItemIndex}_fabricComposition`] ? 'border-red-500' : ''}`}>
                     <SelectValue placeholder="Select fabric composition" />
                   </SelectTrigger>
-                  <SelectContent className='bg-brown-50'>
+                  <SelectContent className="bg-brown-50">
                     {fabricTypes.map((type) => (
                       <SelectItem key={type} value={type}>
                         {type}
@@ -210,7 +209,7 @@ export default function ItemDetailsForm({ items, updateItems, onNext, onBack }: 
                   <SelectTrigger id={`condition-${activeItemIndex}`} className={`border-brown-300 w-full ${errors[`item${activeItemIndex}_condition`] ? 'border-red-500' : ''}`}>
                     <SelectValue placeholder="Select item condition" />
                   </SelectTrigger>
-                  <SelectContent className='bg-brown-50'>
+                  <SelectContent className="bg-brown-50">
                     {conditionTypes.map((type) => (
                       <SelectItem key={type} value={type}>
                         {type}

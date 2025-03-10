@@ -150,17 +150,6 @@ export default function AboutPageClient() {
           <AnimatedTestimonials testimonials={testimonials} />
         </div>
       </section>
-      <section className="container mx-auto my-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={awardsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4 }} className="text-start mb-3">
-          <h1 className="font-title text-brown-700 text-5xl md:text-6xl mb-4">FAQ</h1>
-          <p className="text-brown-300 text-lg">Answers to Your Questions About Sustainable Fashion</p>
-        </motion.div>
-        <div className=" px-4 bg-brown-100">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={awardsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-3">
-            <AccordionFaq />
-          </motion.div>
-        </div>
-      </section>
       {/* Call to Action Section */}
       <section className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 " />
@@ -169,7 +158,7 @@ export default function AboutPageClient() {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="font-title text-3xl md:text-4xl mb-2">Ready to Be Part of a Global Revolution?</h2>
               <p className="text-brown mb-8 max-w-xl mx-auto">By choosing recycled materials, ethical practices, and innovative designs, we’re reducing waste, conserving resources, and creating a positive impact</p>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-black text-white px-8 py-3 rounded-sm hover:bg-gray-900 transition-colors inline-flex items-center gap-2">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-sm hover:bg-brown-300 transition-colors inline-flex items-center gap-2">
                 Join our movement
                 <ArrowRight className="h-4 w-4" />
               </motion.button>
