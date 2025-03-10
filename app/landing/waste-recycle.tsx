@@ -26,7 +26,7 @@ export default function WasteRecycle() {
   return (
     <div ref={ref}>
       <div className="h-auto md:h-[340px] object-cover overflow-hidden">
-        <ParallaxSection image="/images/hero/waste-recycle.jpg" alt="Waste Recycle Background" speed={0.2} style={{ height: '100%', minHeight: '340px', boxSizing: 'border-box' }} imgClassName="object-cover h-[80vh]">
+        <ParallaxSection image="/hero/waste-recycle.jpg" alt="Waste Recycle Background" speed={0.2} style={{ height: '100%', minHeight: '340px', boxSizing: 'border-box' }} imgClassName="object-cover h-[80vh]">
           <div className="w-full h-auto min-h-[340px] px-4 md:px-20 py-8 shadow-[inset_0px_0px_60px_0px_rgba(0,0,0,1.00)] flex-col justify-start items-center gap-8 inline-flex overflow-hidden">
             <motion.div className="flex-col justify-start items-center flex" variants={contentVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
               <div className="text-brown-50 text-xl md:text-2xl font-normal font-sans text-center">Waste recycled since 2025</div>

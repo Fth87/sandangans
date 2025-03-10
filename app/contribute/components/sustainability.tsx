@@ -87,7 +87,7 @@ export default function Sustainability() {
 
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="order-1 md:order-2">
             <div className="relative h-[500px] rounded-lg overflow-hidden">
-              <Image src="/images/contribute/baju.jpg" alt="Sustainable clothing processing" fill className="object-cover" />
+              <Image src="/contribute/baju.jpg" alt="Sustainable clothing processing" fill className="object-cover" />
             </div>
           </motion.div>
         </div>

@@ -63,8 +63,8 @@ export default function ArticleDetail({ params }: { params: Promise<{ slug: stri
 
   return (
     <main className="w-full relative overflow-hidden">
-      <Image src={'/images/article/mie.svg'} alt="mie decoration" className=" w-[60px] sm:w-[100px] md:w-[120px] lg:w-[160px] absolute right-0 top-[10%] lg:top-[20%]" height={160} width={160} />
-      <Image src={'/images/article/star.svg'} alt="star decoration" className=" w-[60px] sm:w-[100px] md:w-[120px] lg:w-[160px] absolute left-0 top-[15%] lg:top-[6%]" height={160} width={160} />
+      <Image src={'/article/mie.svg'} alt="mie decoration" className=" w-[60px] sm:w-[100px] md:w-[120px] lg:w-[160px] absolute right-0 top-[10%] lg:top-[20%]" height={160} width={160} />
+      <Image src={'/article/star.svg'} alt="star decoration" className=" w-[60px] sm:w-[100px] md:w-[120px] lg:w-[160px] absolute left-0 top-[15%] lg:top-[6%]" height={160} width={160} />
       <div className="container max-w-4xl mx-auto mt-20 px-4 py-8 relative">
         <div className="mb-8">
           <Link href="/" onClick={handleBackClick} className="inline-flex text-xl items-center text-brown hover:text-brown-300 transition-colors">

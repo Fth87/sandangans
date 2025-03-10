@@ -60,7 +60,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="flex justify-center lg:justify-end items-center lg:items-end h-full relative"
+          className="flex justify-center lg:justify-end items-center lg:items-end h-full relative mt-auto"
           variants={imageVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -69,26 +69,29 @@ export default function Hero() {
             <CardHero
               title="Black Shoes"
               description="We recycling polyester to make the outsole of this shoes"
-              image="/images/hero/sepatu.png"
-              className="hidden md:flex -left-[15%] bottom-[0%]"
+              image="/hero/sepatu.png"
+              className="hidden md:flex -left-[15%] bottom-[5%]"
+              href='marketplace/product/boots-shoe'
             />
             <CardHero
               title="Beige Hat"
               description="Handwoven from leftover fabric, this hat is as eco-friendly as it is stylish."
-              image="/images/hero/hat.png"
+              image="/hero/hat.png"
               className="hidden md:flex right-[16%] top-[2%]"
+              href='marketplace/product/beige-hat'
             />
             <CardHero
               title="Woman Outer"
               description="Handwoven from leftover fabric, this hat is as eco-friendly as it is stylish."
-              image="/images/hero/outer.png"
+              image="/hero/outer.png"
               className="hidden md:flex right-[0%] bottom-[30%]"
+              href='marketplace/product/brown-woman-outer'
             />
             <Image
-              className="max-w-full md:max-w-[1400px] w-auto h-auto"
+              className="max-w-full md:max-w-[640px] w-auto h-auto"
               width={540}
               height={544}
-              src="/images/hero/mascot.png"
+              src="/hero/mascot.png"
               alt="hero mascott"
               priority
             />

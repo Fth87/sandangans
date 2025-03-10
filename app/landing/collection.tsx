@@ -76,14 +76,14 @@ export default function Collection() {
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         >
-          <Image width={80} height={80} alt={"star decoration"} src={"/images/hero/bintangkiri.svg"} />
+          <Image width={80} height={80} alt={"star decoration"} src={"/hero/bintangkiri.svg"} />
         </motion.div>
         <motion.div
           className="right-0 top-[49px] absolute hidden md:block"
           animate={{ rotate: -360 }}
           transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         >
-          <Image width={80} height={80} alt={"star decoration"} src={"/images/hero/bintangkanan.svg"} />
+          <Image width={80} height={80} alt={"star decoration"} src={"/hero/bintangkanan.svg"} />
         </motion.div>
         <div className="text-center text-brown text-3xl md:text-5xl lg:text-6xl font-bold font-title">
           Crafted from Waste, <br /> Designed for You
@@ -121,7 +121,7 @@ export default function Collection() {
               width={428}
               height={642}
               className="w-full max-w-[428px] h-auto"
-              src="/images/hero/young-teenage-boy-wearing-denim-outfit 1.png"
+              src="/hero/young-teenage-boy-wearing-denim-outfit 1.png"
             />
           </motion.div>
 
@@ -149,7 +149,7 @@ export default function Collection() {
                 className="w-48 md:w-60 h-auto aspect-[3/4]"
                 width={240}
                 height={320}
-                src="/images/hero/sewing-denim-jacket-buttons.png"
+                src="/hero/sewing-denim-jacket-buttons.png"
               />
               <div className="h-[50px] flex-col justify-start items-start gap-1 flex">
                 <div className="self-stretch text-brown-600 text-xl font-medium font-title">Cotton Dress</div>
@@ -170,7 +170,7 @@ export default function Collection() {
                 className="h-auto aspect-[3/4] w-48 md:w-auto md:h-80"
                 width={240}
                 height={320}
-                src="/images/hero/details-blue-jeans-fabric.png"
+                src="/hero/details-blue-jeans-fabric.png"
               />
               <div className="flex-col justify-start items-start gap-1 flex">
                 <div className="self-stretch text-brown-600 text-xl font-medium font-title">Abstract Tshirt</div>
@@ -186,7 +186,7 @@ export default function Collection() {
               transition={{ duration: 30, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               className="hidden md:block"
             >
-              <Image src={"/images/hero/star.svg"} width={192} height={136} alt={"star decoration"} />
+              <Image src={"/hero/star.svg"} width={192} height={136} alt={"star decoration"} />
             </motion.div>
           </motion.div>
         </div>
@@ -223,7 +223,7 @@ export default function Collection() {
                 className="h-auto aspect-[3/4] w-48 md:w-auto md:h-80"
                 width={240}
                 height={320}
-                src="/images/hero/jeans.png"
+                src="/hero/jeans.png"
               />
               <div className="flex-col justify-start items-start gap-1 flex">
                 <div className="self-stretch text-brown-600 text-xl font-medium font-title">Denim Jeans</div>
@@ -240,7 +240,7 @@ export default function Collection() {
               transition={{ duration: 30, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               className="hidden md:block"
             >
-              <Image src={"/images/hero/star.svg"} width={192} height={136} alt={"star decoration"} />
+              <Image src={"/hero/star.svg"} width={192} height={136} alt={"star decoration"} />
             </motion.div>
           </motion.div>
 
@@ -268,7 +268,7 @@ export default function Collection() {
                 className="w-48 md:w-60 h-auto aspect-[3/4]"
                 width={240}
                 height={320}
-                src="/images/hero/jeans-shirt.png"
+                src="/hero/jeans-shirt.png"
               />
               <div className="h-[50px] flex-col justify-start items-start gap-1 flex">
                 <div className="self-stretch text-brown-600 text-xl font-medium font-title">Denim Shirt</div>
@@ -288,7 +288,7 @@ export default function Collection() {
               width={428}
               height={642}
               className="w-full max-w-[428px] h-auto"
-              src="/images/hero/denim-boy.png"
+              src="/hero/denim-boy.png"
             />
           </motion.div>
         </div>

@@ -20,14 +20,14 @@ export const collections = [
     id: 'sustainable-basics',
     title: 'BREATHABLE, COMFORTABLE, AND SUSTAINABLE',
     description: 'Made from post-consumer cotton waste, we recycled cotton into collection includes tees, dresses, and loungewear.',
-    image: '/images/marketplace/products/unisex-brown-sweater.png',
+    image: '/marketplace/products/unisex-brown-sweater.png',
     products: (LIST_PRODUCT as Product[]).filter((item) => item.collection == 'sustainable-basics'),
   },
   {
     id: 'upcycled-denim',
     title: 'FROM OLD JEANS TO TIMELESS FASHION',
     description: 'Our upcycled denim collection breathes new life into stylish jackets, skirts, hats, and more.',
-    image: '/images/marketplace/young-teenage-boy-wearing-denim-outfit-1.png',
+    image: '/marketplace/young-teenage-boy-wearing-denim-outfit-1.png',
     products: (LIST_PRODUCT as Product[]).filter((item) => item.collection == 'upcycled-denim'),
   },
 ];
