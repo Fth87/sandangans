@@ -1,7 +1,7 @@
 import type React from 'react';
 import type { Metadata } from 'next';
-import Navbar from '../layouts/navbar/home-navbar';
-import Footer from '../layouts/footer/home-footer';
+import Navbar from '@/app/layouts/navbar/home-navbar';
+import Footer from '@/app/layouts/footer/home-footer';
 
 export const metadata: Metadata = {
   title: 'Blog Listing | Upcycling Articles',
@@ -15,9 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <div className={` min-h-screen`}>
-      <Navbar isWhite={true} />
+      <Navbar />
       {children}
-      <Footer />
     </div>
   );
 }

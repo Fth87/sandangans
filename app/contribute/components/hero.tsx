@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { BsFillBoxSeamFill } from 'react-icons/bs';
 import { BiSolidDiscount } from 'react-icons/bi';
 import { FaRecycle } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Hero() {
   const containerVariants = {
@@ -44,9 +45,11 @@ export default function Hero() {
             Send us your pre-loved clothes. We'll recycle, upcycle, or resell them responsibly. Earn vouchers and join the circular fashion movement.
           </motion.p>
 
-          <motion.button variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-md flex items-center space-x-2 hover:bg-brown-800 transition-colors">
-            <span>Send Your Clothes</span>
-          </motion.button>
+          <Link href="/contribute/form" className="mt-3">
+            <motion.button variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-md flex items-center space-x-2 hover:bg-brown-800 transition-colors">
+              <span>Send Your Clothes</span>
+            </motion.button>
+          </Link>
 
           <motion.div variants={containerVariants} className="grid grid-cols-3 gap-8 pt-8">
             {steps.map((Step, index) => (

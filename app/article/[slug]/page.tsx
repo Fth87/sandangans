@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
@@ -100,7 +100,7 @@ export default function ArticleDetail({ params }: { params: Promise<{ slug: stri
             {Array(3)
               .fill(null)
               .map((_, index) => (
-                <Link href={`article/${article.slug}`} key={index} className="group">
+                <Link href={`/article/${article.slug}`} key={index} className="group">
                   <article className="overflow-hidden">
                     <Image src={article.image || '/placeholder.svg'} alt={article.title} width={400} height={300} className="w-full h-64 object-cover" />
                     <div className="p-4">
