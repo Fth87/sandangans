@@ -1,0 +1,227 @@
+[
+  {
+    "id": "SDGN-1",
+    "name": "Abstract Natural Pigmented T-Shirt",
+    "price": 89000,
+    "originalPrice": 175000,
+    "image": "/images/marketplace/products/abstract-natural-pigmented-t-shirt.png",
+    "slug": "abstract-natural-pigmented-t-shirt",
+    "description": "A stylish and eco-friendly t-shirt made with natural pigments. Soft, breathable, and crafted from sustainable organic cotton.",
+    "collection": "sustainable-basics"
+  },
+  {
+    "id": "SDGN-2",
+    "name": "Denim Shearling Jacket",
+    "price": 275000,
+    "originalPrice": 499000,
+    "image": "/images/marketplace/products/back-view-athletic-biker-wearing-club-denim-shearling-jacket-helmet-isolated-white.png",
+    "slug": "denim-shearling-jacket",
+    "description": "This denim shearling jacket is made from recycled materials, offering warmth, durability, and a timeless sustainable fashion choice.",
+    "collection": "upcycled-denim"
+  },
+  {
+    "id": "SDGN-3",
+    "name": "Beige Casual Shirt",
+    "price": 120000,
+    "originalPrice": 230000,
+    "image": "/images/marketplace/products/beige-casual-shirt.png",
+    "slug": "beige-casual-shirt",
+    "description": "A lightweight and breathable casual shirt made from sustainable linen, perfect for an eco-conscious wardrobe.",
+    "collection": "sustainable-basics"
+  },
+  {
+    "id": "SDGN-4",
+    "name": "Beige Hat",
+    "price": 75000,
+    "originalPrice": 150000,
+    "image": "/images/marketplace/products/beige-hat.png",
+    "slug": "beige-hat",
+    "description": "A classic beige hat made from organic cotton and biodegradable fibers, ensuring both style and sustainability.",
+    "collection": "sustainable-basics"
+  },
+  {
+    "id": "SDGN-5",
+    "name": "Blue Jeans",
+    "price": 180000,
+    "originalPrice": 350000,
+    "image": "/images/marketplace/products/blue-jeans.png",
+    "slug": "blue-jeans",
+    "description": "Sustainable blue jeans crafted from organic denim and recycled water technology, reducing environmental impact.",
+    "collection": "upcycled-denim"
+  },
+  {
+    "id": "SDGN-6",
+    "name": "Blue Jeans Fabric Details",
+    "price": 95000,
+    "originalPrice": 185000,
+    "image": "/images/marketplace/products/blue-jeans-fabric-details.png",
+    "slug": "blue-jeans-fabric-details",
+    "description": "High-quality blue denim fabric with eco-friendly dyeing techniques, designed for sustainability and longevity.",
+    "collection": "upcycled-denim"
+  },
+  {
+    "id": "SDGN-7",
+    "name": "Boots Shoe",
+    "price": 250000,
+    "originalPrice": 450000,
+    "image": "/images/marketplace/products/boots-shoe.png",
+    "slug": "boots-shoe",
+    "description": "Durable and stylish boots made from responsibly sourced leather and recycled rubber soles."
+  },
+  {
+    "id": "SDGN-8",
+    "name": "Brown Slim Bag",
+    "price": 135000,
+    "originalPrice": 260000,
+    "image": "/images/marketplace/products/brown-slim-bag.png",
+    "slug": "brown-slim-bag",
+    "description": "A sleek and minimalist slim bag crafted from upcycled materials, perfect for sustainable fashion lovers.",
+    "collection": "sustainable-basics"
+  },
+  {
+    "id": "SDGN-9",
+    "name": "Brown Woman Outer",
+    "price": 220000,
+    "originalPrice": 430000,
+    "image": "/images/marketplace/products/brown-woman-outer.png",
+    "slug": "brown-woman-outer",
+    "description": "A stylish outerwear piece made from ethically sourced fabrics, offering warmth and sustainability."
+  },
+  {
+    "id": "SDGN-10",
+    "name": "Close-Up Baby Shoe",
+    "price": 99000,
+    "originalPrice": 190000,
+    "image": "/images/marketplace/products/close-up-baby-shoe.png",
+    "slug": "close-up-baby-shoe",
+    "description": "Soft and comfortable baby shoes made from organic cotton and eco-friendly dyes, ensuring safety for little feet."
+  },
+  {
+    "id": "SDGN-11",
+    "name": "Couple Shirt",
+    "price": 190000,
+    "originalPrice": 360000,
+    "image": "/images/marketplace/products/couple-shirt.png",
+    "slug": "couple-shirt",
+    "description": "A stylish and matching couple shirt set made from 100% organic cotton for a sustainable and comfortable feel.",
+    "collection": "sustainable-basics"
+  },
+  {
+    "id": "SDGN-12",
+    "name": "Cream Woman Sneakers",
+    "price": 275000,
+    "originalPrice": 520000,
+    "image": "/images/marketplace/products/cream-woman-sneakers-with-colourful-stones-it-golden-details.png",
+    "slug": "cream-woman-sneakers",
+    "description": "Eco-conscious sneakers crafted from recycled materials and biodegradable components, with stylish colorful stone details."
+  },
+  {
+    "id": "SDGN-13",
+    "name": "Graphic T-Shirt Black",
+    "price": 115000,
+    "originalPrice": 225000,
+    "image": "/images/marketplace/products/graphic-tshirt-black.png",
+    "slug": "graphic-tshirt-black",
+    "description": "A trendy black graphic t-shirt printed with water-based inks on sustainable organic cotton."
+  },
+  {
+    "id": "SDGN-14",
+    "name": "Gray Shoes",
+    "price": 230000,
+    "originalPrice": 450000,
+    "image": "/images/marketplace/products/gray-shoes.png",
+    "slug": "gray-shoes",
+    "description": "Classic gray shoes made from upcycled leather and plant-based dyes, designed for comfort and sustainability.",
+    "collection": "sustainable-basics"
+  },
+  {
+    "id": "SDGN-15",
+    "name": "Homemade Mini Bag",
+    "price": 105000,
+    "originalPrice": 210000,
+    "image": "/images/marketplace/products/homemade-mini-bag.png",
+    "slug": "homemade-mini-bag",
+    "description": "A handcrafted mini bag made from leftover fabric scraps, reducing waste and promoting ethical fashion."
+  },
+  {
+    "id": "SDGN-16",
+    "name": "Mesh Bag",
+    "price": 75000,
+    "originalPrice": 140000,
+    "image": "/images/marketplace/products/mesh-bag.png",
+    "slug": "mesh-bag",
+    "description": "A reusable and biodegradable mesh bag, perfect for reducing plastic waste while shopping."
+  },
+  {
+    "id": "SDGN-17",
+    "name": "Pair of Brown Leather Boots",
+    "price": 295000,
+    "originalPrice": 580000,
+    "image": "/images/marketplace/products/pair-brown-leather-boots.png",
+    "slug": "pair-brown-leather-boots",
+    "description": "Ethically sourced brown leather boots with eco-friendly tanning processes, combining style and sustainability."
+  },
+  {
+    "id": "SDGN-18",
+    "name": "Recycled Woman Slippers",
+    "price": 89000,
+    "originalPrice": 175000,
+    "image": "/images/marketplace/products/recycled-woman-slippers.png",
+    "slug": "recycled-woman-slippers",
+    "description": "Comfortable slippers made entirely from recycled materials, promoting eco-friendly footwear choices."
+  },
+  {
+    "id": "SDGN-19",
+    "name": "Sewing Denim Jacket",
+    "price": 245000,
+    "originalPrice": 480000,
+    "image": "/images/marketplace/products/sewing-denim-jacket.png",
+    "slug": "sewing-denim-jacket",
+    "description": "A timeless denim jacket crafted from upcycled denim and organic cotton, designed for durability and sustainability."
+  },
+  {
+    "id": "SDGN-20",
+    "name": "Unisex Brown Sweater",
+    "price": 185000,
+    "originalPrice": 370000,
+    "image": "/images/marketplace/products/unisex-brown-sweater.png",
+    "slug": "unisex-brown-sweater",
+    "description": "A cozy unisex sweater made from ethically sourced wool and recycled fibers, perfect for conscious fashion lovers."
+  },
+  {
+    "id": "SDGN-21",
+    "name": "White Bag",
+    "price": 110000,
+    "originalPrice": 220000,
+    "image": "/images/marketplace/products/white-bag.png",
+    "slug": "white-bag",
+    "description": "A minimalist white bag crafted from vegan leather and eco-friendly dyes, offering style with sustainability."
+  },
+  {
+    "id": "SDGN-22",
+    "name": "Woman Brown Set",
+    "price": 260000,
+    "originalPrice": 510000,
+    "image": "/images/marketplace/products/woman-brown-set.png",
+    "slug": "woman-brown-set",
+    "description": "An elegant brown outfit set made from breathable, organic bamboo fabric for a comfortable and sustainable look."
+  },
+  {
+    "id": "SDGN-23",
+    "name": "Woman Dark Brown Outer",
+    "price": 210000,
+    "originalPrice": 420000,
+    "image": "/images/marketplace/products/woman-dark-brown-outer.png",
+    "slug": "woman-dark-brown-outer",
+    "description": "A stylish dark brown outerwear piece made with eco-conscious wool and natural dyes, ensuring warmth and sustainability."
+  },
+  {
+    "id": "SDGN-24",
+    "name": "Woman Cotton Dress",
+    "price": 195000,
+    "originalPrice": 380000,
+    "image": "/images/marketplace/products/woman-cotton-dress.png",
+    "slug": "woman-cotton-dress",
+    "description": "A soft and breathable cotton dress made from 100% organic cotton, perfect for an eco-friendly wardrobe."
+  }
+]
