@@ -1,5 +1,7 @@
 import type React from 'react';
 import type { Metadata } from 'next';
+import Footer from '@/app/layouts/footer/home-footer';
+import Navbar from '../layouts/navbar/home-navbar';
 
 export const metadata: Metadata = {
   title: 'Donation Form | Upcycling contribute',
@@ -13,7 +15,9 @@ export default function FormLayout({
 }>) {
   return (
     <>
+    
       <div className={` min-h-screen`}>{children}</div>
+     
     </>
   );
 }
