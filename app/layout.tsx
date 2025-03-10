@@ -12,7 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const noNavbarPaths = ['/login', '/register', '/contribute/form'];
+  const noNavbarPaths = ['/login', '/register', '/contribute/form', '/trending', 'marketplace', '/collections','/marketplace/product/[id]'];
+  console.log(!noNavbarPaths.includes(pathname.split('/')[0]));
   return (
     <html lang="en ">
       <body className={`flex flex-col justify-between bg-brown-50 antialiased min-h-screen `}>

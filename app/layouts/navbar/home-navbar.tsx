@@ -34,6 +34,10 @@ export default function Navbar() {
       title: 'Collections',
       href: '/collections',
     },
+    {
+      title: 'Contribute',
+      href: '/contribute',
+    },
   ];
 
   function SheetDemo() {
