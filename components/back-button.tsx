@@ -15,7 +15,7 @@ export default function BackButton({ label = "Back", className = "" }: BackButto
   return (
     <motion.button
       onClick={() => router.back()}
-      className={`flex items-center gap-2 text-gray-700 hover:text-black transition-colors group ${className}`}
+      className={`flex items-center gap-2 text-brown-700 hover:text-black transition-colors group ${className}`}
       whileHover={{ x: -3 }}
       whileTap={{ scale: 0.97 }}
     >
