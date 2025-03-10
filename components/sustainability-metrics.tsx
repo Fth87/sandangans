@@ -4,9 +4,9 @@ import { delay, motion } from 'framer-motion';
 import Image from 'next/image';
 
 const factoryImages = [
-  '/images/about/factory-workshop-interior-machines-glass-production-background.jpg', // Left image
-  '/images/about/factory-workshop-interior-machines-glass-production-background.jpg', // center image
-  '/images/about/factory-workshop-interior-machines-glass-production-background.jpg', // Right image
+  '/about/factory-workshop-interior-machines-glass-production-background.jpg', // Left image
+  '/about/factory-workshop-interior-machines-glass-production-background.jpg', // center image
+  '/about/factory-workshop-interior-machines-glass-production-background.jpg', // Right image
 ];
 
 export default function SustainabilityMetrics() {

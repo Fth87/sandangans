@@ -12,7 +12,7 @@ export default function CollectionsPageClient() {
       <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="h-full w-full object-cover overflow-hidden ">
           <ParallaxSection
-            image="/images/marketplace/collection2.jpg"
+            image="/marketplace/collection2.jpg"
             alt="Deskripsi Gambar"
             imgClassName='brightness-50'
             speed={0.2}

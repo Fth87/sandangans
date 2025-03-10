@@ -29,7 +29,7 @@ export default function BlogListing() {
       description: "Don't throw it out—upcycle it! This beginner's guide to upcycling will show you how to transform your old, unused clothes into trendy...",
       author: 'Sandangans Teampeack',
       date: '1 March 2025',
-      image: '/images/article/owi.jpg',
+      image: '/article/owi.jpg',
       content: [
         'Lorem ipsum dolor sit amet consectetur. A eget eleifend libero ipsum. A turpis ut dignissim lorem metus tincidunt etiam. Nunc ullamcorper nunc aliquam eu molestie nunc sit et morbi. Commodo magna mattis lectus cras faucibus odio nisl ullamcorper gravida.',
         'In dictumst ullamcorper in urna. Eget egestas ullamcorper non duis. Odio turpis urna faucibus dolor sit morbi. Senectus risus vestibulum hendrerit dignissim orci leo iaculis egestas. Sit ullamcorper amet lectus viverra cursus. Elit bibendum diam lorem aliquam massa cursus sit vitae mollis. Consequat leo hac interdum mollis amet massa. Magna vel dignissim nunc justo elit sed enim consequat. Fermentum feugiat elit elementum est fringilla. A pretium luctus non tempus elit. Nunc turpis diam turpis cursus enim porttitor est sit eu. Nunc pretium montes dolor vitae mauris pharetra sapien. Non vel integer pulvinar a mi.',

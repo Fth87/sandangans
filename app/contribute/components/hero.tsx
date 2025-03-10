@@ -65,7 +65,7 @@ export default function Hero() {
         </div>
 
         <motion.div variants={itemVariants} className="relative h-[600px] hidden lg:block">
-          <Image src="/images/contribute/contribute.png" alt="Person in beige clothing" width={405} height={726} className="md:w-[300px] lg:w-[400px]" priority />
+          <Image src="/contribute/contribute.png" alt="Person in beige clothing" width={405} height={726} className="md:w-[300px] lg:w-[400px]" priority />
         </motion.div>
       </motion.div>
     </section>

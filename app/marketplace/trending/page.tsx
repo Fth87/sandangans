@@ -15,7 +15,7 @@ export default function CollectionsPage() {
       {/* Top Trending Section */}
       <section className="container mx-auto px-4 py-12 mb-16 ">
         <div className="relative mb-16">
-          <Image src="/images/marketplace/trending/star.svg" alt="Star decoration" width={121} height={86} className="absolute top-2 left-80" />
+          <Image src="/marketplace/trending/star.svg" alt="Star decoration" width={121} height={86} className="absolute top-2 left-80" />
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-title text-brown leading-tight">
             TOP

@@ -5,7 +5,7 @@ export default function ProductCard() {
   return (
     <Link href="/marketplace/product/basic-heavy-weight-t-shirt" className="group ">
       <div className="relative aspect-square overflow-hidden">
-        <Image src="/images/marketplace/contoh.png" alt="Basic Heavy Weight T-Shirt" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
+        <Image src="/marketplace/contoh.png" alt="Basic Heavy Weight T-Shirt" fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>
       <div className="p-4">
         <h3 className="text-brown-900 text-lg md:text-xl font-medium">Basic Heavy Weight T-Shirt</h3>

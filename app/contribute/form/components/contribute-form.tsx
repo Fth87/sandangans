@@ -109,7 +109,7 @@ export default function DonationForm() {
     <div className="flex min-h-screen">
       <div className="hidden md:block w-2/3 bg-black ">
         <BackButton label='' className='absolute top-6 left-6'/>
-        <Image src={'/images/contribute/bg-form-contribute.jpg'} className="object-cover h-full object-right" alt={'background'} width={4470} height={3576} />
+        <Image src={'/contribute/bg-form-contribute.jpg'} className="object-cover h-full object-right" alt={'background'} width={4470} height={3576} />
       </div>
       <div className="relative z-10 flex flex-col w-full  mx-auto py-8  overflow-hidden">
         {/* Back Button */}
