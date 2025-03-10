@@ -1,9 +1,19 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, ShoppingCart, ArrowUpRight } from 'lucide-react';
 import ProductCard from '@/components/product-card';
+import LIST_PRODUCT from "@/data/products.json";
+import { useRouter } from 'next/router';
+import { useEffect, useMemo } from 'react';
+import { useParams } from 'next/navigation'
+import { Product } from '../../data';
 
 export default function ProductDetail() {
+  const {slug} = useParams<{ slug: string }>()
+  const product = useMemo(() => LIST_PRODUCT.find((item) => item.slug === slug) as Product, [slug])  
+  
   return (
     <main className="min-h-screen pb-12">
       {/* Product Detail Section */}
@@ -12,17 +22,17 @@ export default function ProductDetail() {
           {/* Product Images */}
           <div className="relative">
             <div className="relative h-[300px] sm:h-[400px] aspect-auto md:aspect-[3/4] md:h-auto bg-white">
-              <Image src="/images/marketplace/contoh.png" alt="Product image" fill className="object-cover" />
+              <Image src={product.image} alt={product.slug} fill className="object-cover" />
             </div>
           </div>
 
           {/* Product Info */}
           <div className="flex flex-col">
-            <h1 className=" text-3xl md:text-4xl lg:text-5xl font-title text-brown-900 mb-4">Linen-Cotton Blend Outer</h1>
+            <h1 className=" text-3xl md:text-4xl lg:text-5xl font-title text-brown-900 mb-4">{product.name}</h1>
 
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-lg md:text-xl lg:text-2xl font-medium text-brown-900">Rp 189.000</span>
-              <span className="text-sm lg:text-xl px-2 text-brown-50 line-through bg-brown">Rp 420.000</span>
+              <span className="text-lg md:text-xl lg:text-2xl font-medium text-brown-900">Rp {product.price.toLocaleString('id-ID')}</span>
+              <span className="text-sm lg:text-xl px-2 text-brown-50 line-through bg-brown">{product.originalPrice.toLocaleString('id-ID')}</span>
             </div>
 
             {/* Size Selector */}
@@ -44,13 +54,12 @@ export default function ProductDetail() {
             <div className="mb-6">
               <h3 className="font-medium mb-2 text-brown-900 text-xl md:text-2xl">Description</h3>
               <p className="mb-2 text-brown-900 text-lg md:text-xl">
-                Crafted from a luxurious blend of recycled linen and cotton, this outerwear piece combines timeless elegance with sustainable innovation. Designed for versatility, it perfect for any occasion—whether youre dressing up for a
-                casual outing or layering for a breezy evening. Lightweight, breathable, and effortlessly chic, this outer is a must-have for your conscious wardrobe.
+                {product.description}
               </p>
-              <button className="text-brown-300 hover:text-brown flex items-center gap-1">
+              {/* <button className="text-brown-300 hover:text-brown flex items-center gap-1">
                 Read More
                 <ChevronRight className="h-4 w-4 rotate-90" />
-              </button>
+              </button> */}
             </div>
 
             {/* Action Buttons */}

@@ -19,16 +19,16 @@ const heroItems = [
     subtitle: 'Lightweight Comfort',
     description: 'Stay cool with our breathable fabrics designed for hot days.',
     buttonText: 'Explore',
-    image1: '/images/marketplace/sewing-denim-jacket-buttons.png',
-    image2: '/images/marketplace/young-teenage-boy-wearing-denim-outfit-1.png',
+    image1: '/images/marketplace/products/woman-cotton-dress.png',
+    image2: '/images/marketplace/products/abstract-natural-pigmented-t-shirt.png',
   },
   {
     title: 'AUTUMN STYLES',
     subtitle: 'Warm & Cozy',
     description: 'Prepare for the season with our latest autumn collection.',
     buttonText: 'Discover',
-    image1: '/images/marketplace/sewing-denim-jacket-buttons.png',
-    image2: '/images/marketplace/young-teenage-boy-wearing-denim-outfit-1.png',
+    image1: '/images/marketplace/products/unisex-brown-sweater.png',
+    image2: '/images/marketplace/products/woman-brown-set.png',
   },
 ];
 

@@ -10,6 +10,7 @@ import BackButton from '@/components/back-button';
 import ProductGrid from '@/components/product-grid';
 import CategoryFilter from '@/components/category-filter';
 import FilterSidebar from '@/components/filter-sidebar';
+import ProductList from './product-list';
 
 interface Product {
   id: number;
@@ -20,6 +21,7 @@ interface Product {
   colors: string[];
   isNew?: boolean;
   isBestseller?: boolean;
+  slug?: string;
 }
 
 interface Collection {
@@ -183,7 +185,7 @@ export default function CollectionDetailClient({ collection }: CollectionDetailC
         <div className="flex flex-col md:flex-row gap-6">
           <FilterSidebar />
           <div className="flex-1">
-            <ProductGrid />
+            <ProductList products={collection.products} />
           </div>
         </div>
       </section>
