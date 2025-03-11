@@ -37,7 +37,7 @@ export default function ImpactStats() {
   };
 
   return (
-    <section className="py-24 bg-brown-600 text-white relative overflow-hidden">
+    <section className="py-24 bg-brown text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-brown-300 blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-brown-300 blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
