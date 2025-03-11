@@ -11,7 +11,7 @@ interface CardHeroProps {
   description: string;
   image: string;
   className?: string;
-  href?: string;
+  href: string;
 }
 
 export default function CardHero({

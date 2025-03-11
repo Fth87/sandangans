@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
+import Link from "next/link"
 
 export default function Collection() {
   const [titleRef, titleInView] = useInView({
@@ -121,7 +122,7 @@ export default function Collection() {
               width={428}
               height={642}
               className="w-full max-w-[428px] h-auto"
-              src="/hero/young-teenage-boy-wearing-denim-outfit 1.png"
+              src="/hero/young-teenage-boy-wearing-denim-outfit_1.png"
             />
           </motion.div>
 
@@ -129,19 +130,21 @@ export default function Collection() {
             className="flex flex-col justify-start items-center gap-8 md:gap-12 order-1 md:order-2"
             variants={itemVariants}
           >
-            <motion.div
-              className="w-32 h-32 md:w-48 md:h-48 rounded-[999px] border-2 border-brown-300 flex-col justify-center items-center gap-1 flex"
-              variants={discoverButtonVariants}
-              whileHover="hover"
-              initial="rest"
-            >
-              <motion.div whileHover={{ rotate: 45 }} transition={{ duration: 0.2 }}>
-                <ArrowUpRight size={48} className="text-brown" />
+            <Link href="/marketplace/collections/sustainable-basics">
+              <motion.div
+                className="w-32 h-32 md:w-48 md:h-48 rounded-[999px] border-2 border-brown-300 flex-col justify-center items-center gap-1 flex"
+                variants={discoverButtonVariants}
+                whileHover="hover"
+                initial="rest"
+              >
+                <motion.div whileHover={{ rotate: 45 }} transition={{ duration: 0.2 }}>
+                  <ArrowUpRight size={48} className="text-brown" />
+                </motion.div>
+                <div className="text-right text-brown border-brown-300 text-xl md:text-2xl font-medium font-sans">
+                  DISCOVER
+                </div>
               </motion.div>
-              <div className="text-right text-brown border-brown-300 text-xl md:text-2xl font-medium font-sans">
-                DISCOVER
-              </div>
-            </motion.div>
+            </Link>
 
             <div className="flex-col justify-start items-start gap-3 flex">
               <Image
@@ -248,19 +251,21 @@ export default function Collection() {
             className="flex flex-col justify-start items-center gap-8 md:gap-12 order-2"
             variants={itemVariants}
           >
-            <motion.div
-              className="w-32 h-32 md:w-48 md:h-48 rounded-[999px] border-2 border-brown-300 flex-col justify-center items-center gap-1 flex"
-              variants={discoverButtonVariants}
-              whileHover="hover"
-              initial="rest"
-            >
-              <motion.div whileHover={{ rotate: 45 }} transition={{ duration: 0.2 }}>
-                <ArrowUpRight size={48} className="text-brown" />
+            <Link href="/marketplace/collections/upcycled-denim">
+              <motion.div
+                className="w-32 h-32 md:w-48 md:h-48 rounded-[999px] border-2 border-brown-300 flex-col justify-center items-center gap-1 flex"
+                variants={discoverButtonVariants}
+                whileHover="hover"
+                initial="rest"
+              >
+                <motion.div whileHover={{ rotate: 45 }} transition={{ duration: 0.2 }}>
+                  <ArrowUpRight size={48} className="text-brown" />
+                </motion.div>
+                <div className="text-right text-brown border-brown-300 text-xl md:text-2xl font-medium font-sans">
+                  DISCOVER
+                </div>
               </motion.div>
-              <div className="text-right text-brown border-brown-300 text-xl md:text-2xl font-medium font-sans">
-                DISCOVER
-              </div>
-            </motion.div>
+            </Link>
 
             <div className="flex-col justify-start items-start gap-3 flex">
               <Image
