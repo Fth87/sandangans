@@ -11,6 +11,7 @@ import { Awward } from '@/components/awward';
 import { WorldMapDemo } from './map';
 import { impactStats, testimonials, timeline } from './const';
 import { AccordionFaq } from './accordion';
+import Link from 'next/link';
 
 function StatCard({ stat, inView }: { stat: any; inView: boolean }) {
   const Icon = stat.icon;
@@ -158,10 +159,12 @@ export default function AboutPageClient() {
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <h2 className="font-title text-3xl md:text-4xl mb-2">Ready to Be Part of a Global Revolution?</h2>
               <p className="text-brown mb-8 max-w-xl mx-auto">By choosing recycled materials, ethical practices, and innovative designs, we’re reducing waste, conserving resources, and creating a positive impact</p>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-sm hover:bg-brown-300 transition-colors inline-flex items-center gap-2">
-                Join our movement
-                <ArrowRight className="h-4 w-4" />
-              </motion.button>
+              <Link href="/contribute">
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-sm hover:bg-brown-300 transition-colors inline-flex items-center gap-2">
+                  Join our movement
+                  <ArrowRight className="h-4 w-4" />
+                </motion.button>
+              </Link>
               {/* <WorldMapDemo/> */}
             </motion.div>
           </div>
