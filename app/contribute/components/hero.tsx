@@ -45,11 +45,13 @@ export default function Hero() {
             Send us your pre-loved clothes. We'll recycle, upcycle, or resell them responsibly. Earn vouchers and join the circular fashion movement.
           </motion.p>
 
-          <Link href="/contribute/form" className="mt-3">
-            <motion.button variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-md flex items-center space-x-2 hover:bg-brown-800 transition-colors">
-              <span>Send Your Clothes</span>
-            </motion.button>
-          </Link>
+          <div className="flex mt-3">
+            <Link href="/contribute/form" className="mt-3">
+              <motion.button variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-brown text-white px-8 py-3 rounded-md flex items-center space-x-2 hover:bg-brown-800 transition-colors">
+                <span>Send Your Clothes</span>
+              </motion.button>
+            </Link>
+          </div>
 
           <motion.div variants={containerVariants} className="grid grid-cols-3 gap-8 pt-8">
             {steps.map((Step, index) => (

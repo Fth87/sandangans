@@ -57,80 +57,68 @@
 //   );
 // }
 
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Instagram, Facebook, Twitter, Mail, MapPin, Phone } from "lucide-react"
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Instagram, Facebook, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   const footerLinks = [
     {
-      title: "Company",
+      title: 'Pages',
       links: [
-        { name: "About Us", href: "#" },
-        { name: "Our Mission", href: "#" },
-        { name: "Careers", href: "#" },
-        { name: "Press", href: "#" },
+        { name: 'About Us', href: 'aboutus' },
+        { name: 'Article', href: '/article' },
+        { name: 'Contribute', href: '/contribute' },
       ],
     },
     {
-      title: "Services",
+      title: 'Marketplace',
       links: [
-        { name: "How It Works", href: "#" },
-        { name: "Shipping", href: "#" },
-        { name: "Rewards Program", href: "#" },
-        { name: "Partner Brands", href: "#" },
+        { name: 'Shop', href: '/marketplace' },
+        { name: 'Trending', href: '/marketplace/trending' },
+        { name: 'Collections', href: '/marketplace/collections' },
       ],
     },
     {
-      title: "Support",
+      title: 'Support',
       links: [
-        { name: "FAQ", href: "#" },
-        { name: "Contact Us", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-        { name: "Terms of Service", href: "#" },
+        { name: 'FAQ', href: '/contribute#faq' },
+        { name: 'Send us your pre-loved clothes.', href: '/contribute/form' },
       ],
     },
-  ]
+  ];
 
   const socialLinks = [
-    { icon: Instagram, href: "#" },
-    { icon: Facebook, href: "#" },
-    { icon: Twitter, href: "#" },
-  ]
+    { icon: Instagram, href: 'https://instagram.com' },
+    { icon: Facebook, href: 'https://facebook.com' },
+    { icon: Twitter, href: 'https://x.com' },
+  ];
 
   const contactInfo = [
-    { icon: MapPin, text: "Jl. Sustainable Fashion No. 123, Jakarta" },
-    { icon: Phone, text: "+62 123 4567 890" },
-    { icon: Mail, text: "hello@sandhangans.com" },
-  ]
+    { icon: MapPin, text: 'Jl. Sustainable Fashion No. 123, Jakarta' },
+    { icon: Phone, text: '+62 123 4567 890' },
+    { icon: Mail, text: 'hello@sandhangans.com' },
+  ];
 
   return (
-    <footer className="bg-brown-900 text-white pt-16 pb-8">
+    <footer className="bg-brown-800 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-2">
             <Link href="/" className="text-2xl font-serif mb-4 inline-block">
               Sandhangans
             </Link>
-            <p className="text-brown-300 mb-6 max-w-md">
-              Giving pre-loved clothes a meaningful second life while promoting sustainable fashion practices and
-              reducing textile waste.
-            </p>
+            <p className="text-brown-300 mb-6 max-w-md">Giving pre-loved clothes a meaningful second life while promoting sustainable fashion practices and reducing textile waste.</p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
-                const SocialIcon = social.icon
+                const SocialIcon = social.icon;
                 return (
-                  <motion.a
-                    key={index}
-                    href={social.href}
-                    whileHover={{ scale: 1.1, y: -3 }}
-                    className="w-10 h-10 rounded-full bg-brown-800 flex items-center justify-center hover:bg-brown-700 transition-colors"
-                  >
+                  <motion.a key={index} href={social.href} whileHover={{ scale: 1.1, y: -3 }} className="w-10 h-10 rounded-full bg-brown-800 flex items-center justify-center hover:bg-brown-700 transition-colors">
                     <SocialIcon size={18} />
                   </motion.a>
-                )
+                );
               })}
             </div>
           </div>
@@ -158,19 +146,18 @@ export default function Footer() {
             </div>
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
               {contactInfo.map((item, index) => {
-                const ContactIcon = item.icon
+                const ContactIcon = item.icon;
                 return (
                   <div key={index} className="flex items-center text-brown-300 text-sm">
                     <ContactIcon size={14} className="mr-2" />
                     <span>{item.text}</span>
                   </div>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
