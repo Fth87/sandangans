@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import ArticleHead from './components/head';
+import articlesData from "@/data/articles.json"
 
 // Tipe data untuk artikel
 type Article = {
@@ -15,6 +16,7 @@ type Article = {
   image: string;
 };
 
+const MAX_ARTICLES = articlesData.length;
 export default function BlogListing() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [page, setPage] = useState(1);
@@ -22,23 +24,9 @@ export default function BlogListing() {
 
   // Fungsi untuk mengambil artikel
   const fetchArticles = async (pageNumber: number) => {
-    // Simulasi API call
-    const newArticles: Article[] = Array(6).fill({
-      slug: `article-${pageNumber}`,
-      title: `Upcycling 101: Turn Your Old Clothes into Trendy New Pieces (Page ${pageNumber})`,
-      description: "Don't throw it out—upcycle it! This beginner's guide to upcycling will show you how to transform your old, unused clothes into trendy...",
-      author: 'Sandangans Teampeack',
-      date: '1 March 2025',
-      image: '/article/owi.jpg',
-      content: [
-        'Lorem ipsum dolor sit amet consectetur. A eget eleifend libero ipsum. A turpis ut dignissim lorem metus tincidunt etiam. Nunc ullamcorper nunc aliquam eu molestie nunc sit et morbi. Commodo magna mattis lectus cras faucibus odio nisl ullamcorper gravida.',
-        'In dictumst ullamcorper in urna. Eget egestas ullamcorper non duis. Odio turpis urna faucibus dolor sit morbi. Senectus risus vestibulum hendrerit dignissim orci leo iaculis egestas. Sit ullamcorper amet lectus viverra cursus. Elit bibendum diam lorem aliquam massa cursus sit vitae mollis. Consequat leo hac interdum mollis amet massa. Magna vel dignissim nunc justo elit sed enim consequat. Fermentum feugiat elit elementum est fringilla. A pretium luctus non tempus elit. Nunc turpis diam turpis cursus enim porttitor est sit eu. Nunc pretium montes dolor vitae mauris pharetra sapien. Non vel integer pulvinar a mi.',
-        'Iaculis velit morbi mauris vel commodo malesuada urna. Malesuada dolor vel enim sodales ornare velit at. Nullam id non blandit aliquet tellus id sit. Enim proin viverra at varius ac convallis. Vitae proin quisque iaculis lectus fames tristique aliquam. Viverra turpis vitae diam morbi ut integer sed eget. Eget aliquet mauris sit pellentesque. Netus viverra amet magna venenatis dictum molestie et mauris. Tellus nibh diam molestie egestas dui vitae et. Quam sit et nisi ultrices posuere nisi aliquam. Pellentesque donec magna ipsum ac urna.',
-        'Tellus vitae massa vitae arcu id at pharetra. Diam nibh lacus eros urna lobortis dolor. Scelerisque orci lorem mi nunc eget sem. Nulla enim erat molestie quam quam malesuada ut. Risus in magna viverra molestie semper morbi venenatis. Nunc orci neque tempor habitant consequat eu.',
-        'Praesent tortor nibh volutpat pellentesque mauris eu urna sem sagittis. Nam ultrices sed fringilla diam neque habitant vitae. Enim diam turpis sed facilisis suspendisse egestas elementum. At ut id leo neque. Dignissim tristique aliquet semper natoque ultricies. Enim senectus adipiscing mi id sed aenean. Turpis etiam arcu vel vel. Tortor sagittis varius massa iaculis amet ullamcorper amet velit morbi. Tortor tristique at proin feugiat nunc eu tortor natoque. Scelerisque sit facilisis quam ligula aliquam fermentum id. In nunc ut sed lectus proin magnis amet gravida. Tempus vitae faucibus quis in.',
-      ],
-    });
-    return newArticles;
+    // Mengambil artikel
+    const articles = articlesData.slice((pageNumber - 1) * 10, pageNumber * 10);
+    return articles as Article[];
   };
 
   useEffect(() => {
@@ -64,13 +52,15 @@ export default function BlogListing() {
     const observer = new IntersectionObserver((entities) => {
       const target = entities[0];
       if (target.isIntersecting) {
-        setPage((prevPage) => {
-          const nextPage = prevPage + 1;
-          fetchArticles(nextPage).then((newArticles) => {
-            setArticles((prev) => [...prev, ...newArticles]);
+        if(page < (MAX_ARTICLES / 10)) {
+          setPage((prevPage) => {
+            const nextPage = prevPage + 1;
+            fetchArticles(nextPage).then((newArticles) => {
+              setArticles((prev) => [...prev, ...newArticles]);
+            });
+            return nextPage;
           });
-          return nextPage;
-        });
+        }
       }
     }, options);
 
@@ -131,7 +121,7 @@ export default function BlogListing() {
               {articles.slice(1, 4).map((article, index) => (
                 <Link href={`article/${article.slug}`} key={index} className="group flex items-start gap-4  p-4 " onClick={() => handleArticleClick(article)}>
                   <div className="flex-shrink-0">
-                    <Image src={articles[0].image || '/placeholder.svg'} alt="Recycling icon" width={100} height={100} className=" " />
+                    <Image src={article.image || '/placeholder.svg'} alt="Recycling icon" width={100} height={100} className="object-fill" />
                   </div>
                   <div>
                     <div className="flex items-start text-sm font-light font-sans group-hover:text-brown-300 text-brown mb-1">
@@ -156,7 +146,7 @@ export default function BlogListing() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-            {articles.map((article, index) => (
+            {articles.slice(4, -1).map((article, index) => (
               <Link href={`article/${article.slug}`} key={index} className="group p-4" onClick={() => handleArticleClick(article)}>
                 <article className="overflow-hidden">
                   <Image src={article.image || '/placeholder.svg'} alt={article.title} width={400} height={300} className="w-full h-64 object-cover" />

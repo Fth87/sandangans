@@ -6,6 +6,8 @@ import { ArrowLeft } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import articlesData from "@/data/articles.json"
+
 
 // Define Article type
 type Article = {
@@ -61,6 +63,8 @@ export default function ArticleDetail({ params }: { params: Promise<{ slug: stri
     );
   }
 
+  const otherArticles = articlesData.filter((a) => a.slug !== article.slug).slice(0, 3)
+
   return (
     <main className="w-full relative overflow-hidden">
       <Image src={'/article/mie.svg'} alt="mie decoration" className=" w-[60px] sm:w-[100px] md:w-[120px] lg:w-[160px] absolute right-0 top-[10%] lg:top-[20%]" height={160} width={160} />
@@ -74,7 +78,7 @@ export default function ArticleDetail({ params }: { params: Promise<{ slug: stri
         </div>
 
         <div className="mb-10 relative">
-          <Image src={article.image || '/placeholder.svg'} alt={article.title} width={800} height={500} className="w-full h-auto object-cover rounded-lg mx-auto" priority />
+          <Image src={article.image || '/placeholder.svg'} alt={article.title} width={800} height={500} className="w-full h-auto object-cover rounded-lg mx-auto aspect-video" priority />
         </div>
 
         <article className="prose prose-lg max-w-none">
@@ -97,18 +101,17 @@ export default function ArticleDetail({ params }: { params: Promise<{ slug: stri
         <section className="mt-16">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Related Articles</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {Array(3)
-              .fill(null)
-              .map((_, index) => (
-                <Link href={`/article/${article.slug}`} key={index} className="group">
+            {otherArticles
+              .map((otherArticle, index) => (
+                <Link href={`/article/${otherArticle.slug}`} key={index} className="group">
                   <article className="overflow-hidden">
-                    <Image src={article.image || '/placeholder.svg'} alt={article.title} width={400} height={300} className="w-full h-64 object-cover" />
+                    <Image src={otherArticle.image || '/placeholder.svg'} alt={otherArticle.title} width={400} height={300} className="w-full h-64 object-cover" />
                     <div className="p-4">
-                      <h3 className="font-medium text-lg font-title text-brown group-hover:text-brown-300 mb-2">{article.title}</h3>
-                      <p className="font-light text-brown group-hover:text-brown-300 text-sm mb-4 line-clamp-3">{article.description}</p>
+                      <h3 className="font-medium text-lg font-title text-brown group-hover:text-brown-300 mb-2">{otherArticle.title}</h3>
+                      <p className="font-light text-brown group-hover:text-brown-300 text-sm mb-4 line-clamp-3">{otherArticle.description}</p>
                       <div className="flex justify-between items-center font-light text-brown group-hover:text-brown-300 text-sm ">
-                        <span>By {article.author}</span>
-                        <span>{article.date}</span>
+                        <span>By {otherArticle.author}</span>
+                        <span>{otherArticle.date}</span>
                       </div>
                     </div>
                   </article>
