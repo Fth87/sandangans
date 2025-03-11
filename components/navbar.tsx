@@ -1,9 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Search, ShoppingCart, User, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -92,6 +94,19 @@ export default function Navbar() {
     { href: '/marketplace/collections', label: 'Collections' },
   ];
 
+  const pathname = usePathname();
+
+  const checkMenuActive = useCallback(
+    (path: string) => {
+      if (path == "/marketplace") {
+        return pathname === path || pathname.includes('marketplace/product');
+      }
+      return pathname.includes(path);
+    },
+    [pathname]
+  );
+
+
   return (
     <header className={`sticky top-0 z-50 bg-brown-50 ${scrolled ? 'shadow-sm' : 'border-b border-gray-200'} transition-all duration-300`}>
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
@@ -109,7 +124,10 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm font-medium hover:underline underline-offset-4">
+              <Link key={link.href} href={link.href} className={cn([
+                "text-sm font-medium hover:font-semibold",
+                checkMenuActive(link.href) ? "underline underline-offset-4 font-semibold" : "",
+              ])}>
                 {link.label}
               </Link>
             ))}
